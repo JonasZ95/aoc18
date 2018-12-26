@@ -1,0 +1,31 @@
+(define-fun absolute ((x Int)) Int
+  (ite (>= x 0) x (- x)))
+
+  (define-fun dist ((p_x Int) (q_x Int) (p_y Int) (q_y Int)  (p_z Int) (q_z Int)) Int
+    (+
+        (absolute (- q_x p_x))
+        (absolute (- q_y p_y))
+        (absolute (- q_z p_z))
+    )
+  )
+
+  (define-fun in_range ((x Int) (y Int) (z Int)) Int
+    (+
+        +++
+    )
+  )
+
+(declare-const x Int)
+(declare-const y Int)
+(declare-const z Int)
+
+(maximize(in_range x y z))
+(minimize(+ x y z))
+
+(check-sat)
+(get-model)
+(get-objectives)
+;;(eval x)
+;;(eval y)
+;;(eval z)
+(eval (+ x y z))

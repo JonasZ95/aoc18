@@ -1,0 +1,62 @@
+use Solution;
+use Result;
+use util::file::data_path;
+use util::file::sample_path;
+use util::file::load;
+use std::str::FromStr;
+
+#[derive(Default)]
+pub struct Data {
+
+}
+
+#[derive(Default)]
+pub struct Solution12 {
+        data: Data,
+        sample: Data
+}
+
+impl FromStr for Data {
+    type Err = Box<std::error::Error>;
+
+    fn from_str(s: &str) -> Result<Self> {
+        unimplemented!()
+    }
+}
+
+fn part1(d: &Data) -> Result<usize> {
+    Ok(0)
+}
+
+fn part2(d: &Data) -> Result<usize> {
+    Ok(0)
+}
+
+impl Solution for Solution12 {
+    fn init(&mut self) -> Result<()> {
+        let s = load(&data_path(12))?;
+        self.data = s.parse()?;
+
+        let s = load(&sample_path(12))?;
+        self.sample = s.parse()?;
+        Ok(())
+    }
+
+    fn part1(&mut self) -> Result<()> {
+        let result = part1(&self.sample)?;
+        println!("sample1: {}", result);
+
+        let result = part1(&self.data)?;
+        println!("result1: {}", result);
+        Ok(())
+    }
+
+    fn part2(&mut self) -> Result<()> {
+        let result = part2(&self.sample)?;
+                println!("sample2: {}", result);
+
+                let result = part2(&self.data)?;
+                println!("result2: {}", result);
+                Ok(())
+    }
+}
